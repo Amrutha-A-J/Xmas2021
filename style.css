@@ -1,0 +1,221 @@
+html {
+  background-color: #000;
+}
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  background: url(images/snow_ls.png);
+  background-repeat: repeat;
+  margin: 0 auto;
+  background-color: #dddcdc;
+}
+#particles-js {
+  pointer-events: none;
+}
+.snow {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+.sky {
+  position: fixed;
+  width: 100%;
+  height: 63%;
+  background: linear-gradient(
+      to bottom,
+      rgba(29, 35, 71, 0.8) 50%,
+      rgba(19, 25, 28, 0.8) 80%,
+      rgba(15, 14, 14, 0.8) 100%
+    ),
+    url(images/bg.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.ls-container {
+  position: absolute;
+  z-index: 5;
+  bottom: -10px;
+  width: 100%;
+}
+.ls-container img {
+  width: 100%;
+}
+.crib {
+  position: absolute;
+  z-index: 10;
+  bottom: 15%;
+}
+.crib img {
+  width: 70%;
+}
+.pine_fg {
+  position: absolute;
+  left: 78%;
+}
+#bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-image: linear-gradient(to bottom, #180c1c 0%, #172630 100%);
+}
+.lamp {
+  position: fixed;
+  width: 150px;
+  bottom: 0;
+}
+.lamp-container {
+  left: 86%;
+  position: relative;
+  transform: scale(0.3);
+}
+#short {
+  height: 500px;
+  left: calc(50% - 230px);
+  transform: scaleX(-1);
+}
+#post,
+#curve,
+#socket,
+#light {
+  position: absolute;
+}
+#post {
+  height: 100%;
+  width: 10px;
+  background: #070707;
+  left: 30px;
+  border-right: 5px solid #70643e;
+}
+#curve {
+  overflow: hidden;
+  width: 100%;
+  left: 0;
+  top: 20px;
+  height: 100px;
+  transform: rotate(-10deg);
+}
+#curve:before,
+#curve:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 250px;
+  left: -50px;
+  border-radius: 50%;
+}
+#curve:before {
+  top: 0;
+  border-top: 10px solid #070707;
+}
+#curve:after {
+  top: 6px;
+  border-top: 5px solid #70643e;
+}
+#socket {
+  width: 15px;
+  height: 0;
+  border: solid transparent;
+  border-width: 20px 10px;
+  border-bottom-color: #070707;
+  top: 0;
+  right: 13px;
+}
+#socket:after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: -17px;
+  height: 50px;
+  width: 50px;
+  background: #ffe000;
+  color: #ffe000;
+  border-radius: 50%;
+  box-shadow: 0 0 10px;
+  animation: flicker 3s ease-out infinite;
+  z-index: -1;
+}
+.greeting {
+  position: absolute;
+  bottom: 8px;
+  right: 11%;
+}
+.greeting img {
+  width: 50vw;
+  max-width: 450px;
+}
+@keyframes flicker {
+  0% {
+    box-shadow: 0px 0px 3px;
+  }
+  2% {
+    box-shadow: 0px 0px 29px;
+  }
+  8% {
+    box-shadow: 0px 0px 3px;
+  }
+  9% {
+    opacity: 1;
+    box-shadow: 0px 0px 29px;
+  }
+  12% {
+    box-shadow: 0px 0px;
+  }
+  20% {
+    box-shadow: 0px 0px 29px;
+  }
+  25% {
+    box-shadow: 0px 0px 3px;
+  }
+  30% {
+    box-shadow: 0px 0px 29px;
+  }
+  70% {
+    box-shadow: 0px 0px 20px;
+  }
+  72% {
+    box-shadow: 0px 0px 6px;
+  }
+  77% {
+    box-shadow: 0px 0px 26px;
+  }
+  100% {
+    box-shadow: 0px 0px 25px;
+  }
+}
+@media (max-width: 768px) {
+  .crib img {
+    width: 65vw;
+  }
+}
+@media (min-width: 768px) {
+  .lamp-container {
+    left: 81%;
+    position: relative;
+    transform: scale(0.6);
+  }
+  .greeting img {
+    width: 39vh;
+    max-width: 450px;
+  }
+}
+@media (min-width: 1000px) {
+  .sky {
+    height: 37vw;
+  }
+  body {
+    background-position: 50%, 100%;
+    background-repeat: space;
+  }
+  .lamp-container {
+    left: 47%;
+    position: relative;
+    transform: scale(0.7);
+  }
+  .greeting img {
+    width: 33vh;
+    max-width: 450px;
+  }
+}
